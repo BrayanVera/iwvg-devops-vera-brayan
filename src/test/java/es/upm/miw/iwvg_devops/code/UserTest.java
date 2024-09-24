@@ -1,6 +1,5 @@
 package es.upm.miw.iwvg_devops.code;
 
-import org.apache.commons.lang3.math.Fraction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
