@@ -8,7 +8,5 @@ import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConf
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);// mvnw clean spring-boot:run
-
-        System.out.println("Hola");
     }
 }
