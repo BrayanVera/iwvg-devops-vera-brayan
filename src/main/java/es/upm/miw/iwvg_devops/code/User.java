@@ -1,7 +1,5 @@
 package es.upm.miw.iwvg_devops.code;
 
-//Change of future
-import org.apache.commons.lang3.math.Fraction;
 import java.util.ArrayList;
 import java.util.List;
 
