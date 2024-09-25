@@ -50,4 +50,51 @@ public class FractionTest {
         assertEquals(4, fraction.getDenominator());
     }
 
+    @Test
+    void testIsProper() {
+        Fraction f = new Fraction(1, 2);
+        assertTrue(f.isProper());
+        assertFalse(f.isImproper());
+    }
+
+    @Test
+    void testIsImproper() {
+        Fraction f = new Fraction(2, 1);
+        assertTrue(f.isImproper());
+        assertFalse(f.isProper());
+    }
+
+    @Test
+    void testIsEquivalent() {
+        Fraction f1 = new Fraction(1, 2);
+        Fraction f2 = new Fraction(2, 4);
+        assertTrue(f1.isEquivalent(f2));
+
+        Fraction f3 = new Fraction(1, 3);
+        assertFalse(f1.isEquivalent(f3));
+    }
+
+    @Test
+    void testAdd() {
+        Fraction f1 = new Fraction(1, 2);
+        Fraction f2 = new Fraction(1, 3);
+        Fraction expected = new Fraction(5, 6);
+        assertEquals(expected, f1.add(f2));
+    }
+
+    @Test
+    void testMultiply() {
+        Fraction f1 = new Fraction(1, 2);
+        Fraction f2 = new Fraction(1, 3);
+        Fraction expected = new Fraction(1, 6);
+        assertEquals(expected, f1.multiply(f2));
+    }
+
+    @Test
+    void testDivide() {
+        Fraction f1 = new Fraction(1, 2);
+        Fraction f2 = new Fraction(1, 3);
+        Fraction expected = new Fraction(3, 2);
+        assertEquals(expected, f1.divide(f2));
+    }
 }
