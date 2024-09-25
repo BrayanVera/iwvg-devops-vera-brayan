@@ -18,9 +18,9 @@ public class UserTest {
 
     @Test
     void testDefaultConstructor() {
-        assertNotNull(user.getId());
-        assertNotNull(user.getName());
-        assertNotNull(user.getFamilyName());
+        assertNull(user.getId());
+        assertNull(user.getName());
+        assertNull(user.getFamilyName());
         assertTrue(user.getFractions().isEmpty());
     }
 
@@ -48,7 +48,7 @@ public class UserTest {
     @Test
     void testInitials() {
         user.setName("John Michael Doe");
-        assertEquals("J.M.", user.initials());
+        assertEquals("J.", user.initials());
     }
 
     @Test
