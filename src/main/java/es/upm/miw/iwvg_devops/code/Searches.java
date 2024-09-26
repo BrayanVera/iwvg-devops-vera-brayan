@@ -20,6 +20,7 @@ public class Searches {
     }
 
     public Fraction findFractionSubtractionByUserName(String name) {
+        //bug#11
         return new UsersDatabase().findAll()
                 .filter(user -> user.getName().equals(name))
                 .map(User::getFractions)
