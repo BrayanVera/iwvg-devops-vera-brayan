@@ -22,14 +22,19 @@ public class Searches {
     public Fraction findFractionSubtractionByUserName(String name) {
         return new UsersDatabase().findAll()
                 .filter(user -> user.getName().equals(name))
-                .map(user -> user.getFractions())
+                .map(User::getFractions)
                 .flatMap(Collection::stream)
-                .reduce(new Fraction(0, 1), (a, b) -> a.subtract(b));
+                .reduce(new Fraction(0, 1), Fraction::subtract);
     }
 
-
     public Fraction findFractionMultiplicationByUserFamilyName(String familyName) {
-        return null;
+
+        System.out.println("Hola");
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFamilyName().equals(familyName))
+                .map(User::getFractions)
+                .flatMap(Collection::stream)
+                .reduce(new Fraction(1, 1),Fraction::multiply);
     }
 
 }

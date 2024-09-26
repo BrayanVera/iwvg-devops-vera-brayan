@@ -50,4 +50,13 @@ public class SearchesTest {
         assertEquals("Cannot subtract by zero a/0", exception.getMessage());
     }
 
+    @Test
+    public void testFindFractionMultiplicationByUserFamilyName() {
+
+        Fraction fraction = new Fraction(12, -240);
+        Fraction result = new Searches().findFractionMultiplicationByUserFamilyName("López");
+        assertEquals(fraction, result);
+
+    }
+
 }
