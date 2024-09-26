@@ -1,5 +1,6 @@
 package es.upm.miw.iwvg_devops.code;
 
+import java.util.Collection;
 import java.util.stream.Stream;
 
 public class Searches {
@@ -18,9 +19,14 @@ public class Searches {
                 .map(User::getId);
     }
 
-    public Fraction findFractionSubtractionByUserName(String name){
-        return new Fraction();
+    public Fraction findFractionSubtractionByUserName(String name) {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getName().equals(name))
+                .map(user -> user.getFractions())
+                .flatMap(Collection::stream)
+                .reduce(new Fraction(0, 1), (a, b) -> a.subtract(b));
     }
+
 
     public Fraction findFractionMultiplicationByUserFamilyName(String familyName) {
         return null;
