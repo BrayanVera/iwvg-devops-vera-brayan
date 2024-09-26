@@ -56,6 +56,18 @@ public class Fraction {
         return new Fraction(newNumerator / gcdValue, newDenominator / gcdValue);
     }
 
+    public Fraction subtract(Fraction fraction) {
+        if (fraction == null || fraction.getDenominator() == 0) {
+            throw new ArithmeticException("Cannot subtract by zero a/0");
+        }
+
+        int newNumerator = numerator * fraction.denominator - denominator * fraction.numerator;
+        int newDenominator = denominator * fraction.denominator;
+
+        int gcdValue = calculateGreatestCommonDivisor(newNumerator, newDenominator);
+        return new Fraction(newNumerator / gcdValue, newDenominator / gcdValue);
+    }
+
     /**
      * Calculates the Greatest Common Divisor (GCD) of two integers.
      * This method uses the iterative Euclidean algorithm to find the GCD.
